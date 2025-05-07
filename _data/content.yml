@@ -5,7 +5,7 @@
 
 ### Hero [ hero-image ]
 hero:
-  image: "assets/img/ㅇㅇㅅ.png"
+  image: "D:\Git-local\eunseo-im.github.io\assets\img\ㅇㅇㅅ.png"
   image_alt: "Zoé Miller"
   title: "<b>Im</b> Eunseo"
   before_title: "안녕하세요, <b>제 이름은</b>"
@@ -90,11 +90,11 @@ skills:
 
   #column3:
     #items:
-      - #label: "" #0-10 progress in dots
+      #- label: "" #0-10 progress in dots
         #text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         #value: "90" #0-100 progress in %
 
-      - #label: "Adobe XD" #0-10 progress in dots
+      #- label: "Adobe XD" #0-10 progress in dots
         #text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         #value: "80" #0-100 progress in %
 
