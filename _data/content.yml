@@ -15,7 +15,7 @@ hero:
     label: "이력서 다운로드"
     link: "https://drive.google.com/"
   button2:
-    label: "My Skills"
+    label: "나의 스킬"
     link: "#skills-section"
   bg_title: "Web Developer"
   info:
