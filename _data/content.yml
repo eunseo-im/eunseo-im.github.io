@@ -257,7 +257,7 @@ contacts:
   list:
     - label: "Address"
       icon: "far fa-map"
-      text: "North Tower, Toronto, Canada"
+      text: "Korea"
 
     - label: "Freelance"
       icon: "far fa-user"
@@ -265,11 +265,11 @@ contacts:
 
     - label: "Email"
       icon: "far fa-envelope"
-      text: "zoe.miller@mydomain.com"
+      text: "eunseoim@naver.com"
 
     - label: "Phone"
       icon: "far fa-address-book"
-      text: "+1 900 - 900 - 9000"
+      text: "+82 10 - 2498 - 5040"
 
 ### Portfolio [ portfolio ]
 #items generates from dir /_works/*
