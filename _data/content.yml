@@ -71,28 +71,28 @@ skills:
   column1:
     items:
       - label: "PHP" #0-10 progress in dots
-        text: ""
+        text: "Built basic web features like user registration and message boards to understand how web systems work."
         value: "85" #0-100 progress in %
 
       - label: "Python" #0-10 progress in dots
-        text: ""
+        text: "Created simple automation scripts for security exercises and developed a basic tool for detecting web vulnerabilities."
         value: "75" #0-100 progress in %
 
   column2:
     items:
-      - label: "JavaScript" #0-10 progress in dots
-        text: "d"
+      - label: "JSP" #0-10 progress in dots
+        text: "Worked on dynamic web pages with form submissions and database connections through small projects."
         value: "75" #0-100 progress in %
 
-      - label: "C" #0-10 progress in dots
-        text: ""
-        value: "70" #0-100 progress in %
-
-  #column3:
-    #items:
       #- label: "" #0-10 progress in dots
-        #text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-        #value: "90" #0-100 progress in %
+        #text: ""
+        #value: "70" #0-100 progress in %
+
+  column3:
+    items:
+      - label: "C" #0-10 progress in dots
+        text: "Practiced solving basic algorithm problems using conditionals, loops, and arrays, and built simple console-based programs."
+        value: "90" #0-100 progress in %
 
       #- label: "Adobe XD" #0-10 progress in dots
         #text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
