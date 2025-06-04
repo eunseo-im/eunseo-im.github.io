@@ -9,7 +9,7 @@ settings:
 ### Preloader
 preloader:
   logo:
-    image: "assets/img/logo2.png"
+    image: "assets/img/eunseo_logo.png"
     alt: "Zoé Miller"
 
 ### Header
