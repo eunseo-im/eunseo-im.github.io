@@ -17,7 +17,7 @@ hero:
   button2:
     label: "나의 스킬"
     link: "#skills-section"
-  bg_title: "Web Developer"
+  bg_title: "Cyber Security"
   #info:
     #- num: "12 <strong>+</strong>"
      # value: "Years of <strong>Experience</strong>"
