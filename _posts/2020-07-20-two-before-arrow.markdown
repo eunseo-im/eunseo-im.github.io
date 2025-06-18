@@ -1,32 +1,45 @@
 ---
 layout: post
-title:  Two Before Arrow Not Relied
-date:   2020-07-20
-category: Design
+title:  메두사 랜섬웨어 보고서
+date:   2025-04-20
+category: web
 image: assets/img/blog/blog8.jpg
-author: Ryan Adlard
-tags: code
+author: eunseoim
+tags: ransomware
 ---
 
-So striking at of to welcomed resolved. Northward by described up household therefore attention. Excellence decisively nay man yet impression for contrasted remarkably.
+메두사(Medusa) 랜섬웨어는 2021년 등장한 악성 소프트웨어로, 주로 기업과 기관을 타겟으로 한 사이버 공격에서 발견되었습니다. 이 랜섬웨어는 파일을 AES 암호화 방식으로 잠그고, 피해자가 복호화 키를 얻기 위해 금전을 요구합니다. 메두사는 주로 이메일 피싱, 원격 데스크톱 프로토콜(RDP) 취약점, 시스템 보안 결함을 통해 침투합니다. 
+메두사 랜섬웨어의 공격 과정을 설명드리겠습니다. 
 
-Forfeited you engrossed but gay sometimes explained. Another as studied it to evident. Merry sense given he be arise. Conduct at an replied removal an amongst. Remaining determine few her two cordially admitting old.
+1.침투	
+-이메일 피싱, 취약점 공격, 원격 데스크톱 프로토콜(RDP) 이용	
+피해자는 이메일의 악성 링크나 첨부 파일을 클릭하거나, 취약한 시스템 보안으로 공격을 받습니다.
+2.시스템 감염	및 악성 코드 실행	
+감염된 시스템에서 메두사 랜섬웨어가 실행되어, 시스템을 제어하고 악성 파일을 배포합니다.
+3.파일 암호화	(AES 암호화 방식 사용)	
+중요한 파일들을 암호화하여 사용자가 접근할 수 없게 만듭니다. 파일 확장자가 변경됩니다.
+4.랜섬 노트 표시	(암호화 후 랜섬 노트 표시)	
+피해자의 화면에 복호화 키를 받기 위한 금액과 지불 방법을 담은 랜섬 노트가 표시됩니다.
+5.확산		
+감염된 시스템에서 다른 네트워크 시스템으로 랜섬웨어가 전파되어 더 많은 데이터를 암호화합니다.
+6.지불 요구	(암호화된 데이터 복호화 대가 요구)	
+금전을 요구하며, 지불 시 복호화 키를 제공하겠다고 위협합니다.
+7.결과	(금전 요구 또는 데이터 손실)	
+피해자가 지불하지 않으면 데이터 복구 불가, 또는 지불 후에도 복호화가 되지 않을 수 있습니다.
 
+메두사(Medusa) 랜섬웨어는 주로 대기업과 기관을 타겟으로 한 공격에서 나타나며, 여러 실질적인 피해 사례와 영향을 미쳤습니다. 구체적인 피해 사례와 영향을 아래와 같이 정리할 수 있습니다.
+1.	의료기관
+2021년, 메두사 랜섬웨어는 의료기관을 공격하여 중요한 환자 데이터를 암호화했습니다. 이로 인해 병원의 의료 서비스 제공에 차질이 생겼고, 환자들의 치료 기록을 즉시 열 수 없게 되었습니다. 결과적으로 병원은 의료 서비스 중단과 함께 큰 재정적 손실을 입었습니다.
+2.	정부기관
+메두사 랜섬웨어는 일부 국가의 정부기관을 공격한 사례도 있습니다. 공격자는 민감한 정부 문서와 시스템을 암호화하고, 복호화 키를 대가로 금전을 요구했습니다. 이로 인해 정부의 행정 업무가 중단되고, 국가 보안에 위협이 되었습니다.
 
-> Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque suscipit.
+메두사 랜섬웨어와 같은 악성 공격을 예방하기 위한 보안 패치 방법으로는 다음과 같습니다.
+1. Windows 운영 체제 보안 패치 -RDP 취약점 패치 이용
+2. 애플리케이션 및 소프트웨어 패치 - 웹 브라우저의 보안 패치를 설치하여, 악성 웹사이트나 피싱 공격 차단
+3. 네트워크 보안 패치 - 방화벽 및 라우터 업데이트 및 취약한 포트 차단
+4. 보안 소프트웨어 및 침입 탐지 시스템 - 침입 탐지 시스템(IDS/IPS) 모니터링
+5. 원격 데스크톱 프로토콜(RDP) 보안 강화 - RDP 비활성화 및 포트 변경
+6. 데이터베이스 및 관리 시스템 보안 패치 - SQL Injection 및 권한 상승 취약점 패치
+7. 서버 및 클라우드 보안 - 서버 보안 강화 및 클라우드 패치 적용
 
-Tiled say decay spoil now walls meant house. My mr interest thoughts screened of outweigh removing. Evening society musical besides inhabit ye my. Lose hill well up will he over on. Increasing [link](#) sufficient everything men him admiration unpleasing .
-
-* Greatest properly off ham exercise all.
-* Unsatiable invitation its possession nor off.
-* All difficulty estimating unreserved increasing the solicitude.
-
-Unpleasant astonished an diminution up partiality. Noisy an their of meant. Death means up civil do an offer wound of.
-
-```ruby
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Ryan')
-#=> prints 'Hi, Ryan' to STDOUT.
-```
+메두사 랜섬웨어를 예방하기 위한 보안 패치는 주로 운영 체제, 애플리케이션, 네트워크 장비 및 보안 소프트웨어의 최신 패치를 적용하는 것입니다. 이와 함께 원격 데스크톱(RDP)의 보안을 강화하고, 네트워크 서비스의 불필요한 포트를 차단하여 공격 표면을 줄이는 것이 중요합니다. 모든 시스템과 소프트웨어의 보안 패치를 자동으로 적용하고, 주기적으로 보안 상태를 점검하는 것이 랜섬웨어 예방의 핵심입니다.

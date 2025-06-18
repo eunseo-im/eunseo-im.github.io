@@ -1,32 +1,36 @@
 ---
 layout: post
-title:  "By spite about do of do allow"
-date:   2020-08-05
-category: Music
+title:  "SKT 유심 정보 유출 사고 분석 보고서"
+date:   2025-05-12
+category: web
 image: assets/img/blog/blog9.jpg
-author: Ryan Adlard
-tags: rock
+author: eunseoim
+tags: SKT
 ---
+SKT 유심 정보 유출 사고 분석 보고서
 
-So striking at of to welcomed resolved. Northward by described up household therefore attention. Excellence decisively nay man yet impression for contrasted remarkably.
+1.	사고 개요
+2025년 4월 19일 밤 11시경, SK텔레콤의 가입자 인증 서버(HSS)가 해킹당하는 중대한 보안 사고가 발생하였다. 이로 인해 유심 고유 식별번호를 포함한 가입자 핵심 정보가 유출되었으며, 통신 인프라 전반에 대한 심각한 보안 우려가 제기되었다.
 
-Forfeited you engrossed but gay sometimes explained. Another as studied it to evident. Merry sense given he be arise. Conduct at an replied removal an amongst. Remaining determine few her two cordially admitting old.
+2.	사고 원인
+이번 해킹에는 리눅스 기반 백도어 악성코드인 ‘BPF도어(BPFdoor)’가 사용되었다. 이 악성코드는 시스템에 은밀히 잠복한 뒤 매직 패킷(Magic Packet)을 통해 활성화되며, TCP, UDP, ICMP 프로토콜을 이용해 명령을 수신하고 내부 네트워크로 확산할 수 있다. 정상 프로세스로 위장해 탐지를 회피하며, 암호 기반 인증 방식으로 공격자가 원격 제어를 수행할 수 있는 고도의 은폐성과 확산 능력을 갖췄다. 
+공격 배후로 중국 기반 APT 그룹 ’레드멘션(Red Menshen)’이 지목되었으나, BPF도어가 오픈소스화되었기 때문에 정확한 배후 특정은 어려운 상황이다. 2025년 4월 SK텔레콤 가입자 인증 서버 해킹 사건과 관련하여 경찰이 본격적인 수사에 착수했다. 경찰청은 피해 서버와 악성코드 정보를 확보한 뒤 분석을 진행 중이며, 공격자의 인터넷주소(IP)를 추적하고 있다고 밝혔다. 다만, 아직 해킹 주체는 특정되지 않은 상태다. 서울경찰청 사이버수사대는 지난 4월 23일 SKT로부터 사고 신고를 접수하고 수사에 착수했다. 이어 4월 30일에는 SK텔레콤이 해킹 사실을 한국인터넷진흥원(KISA)에 뒤늦게 신고했다는 이유로 최태원 SK그룹 회장과 유영상 SKT 대표에 대한 고발장이 접수되었다. 이튿날인 5월 1일에는 업무상 배임 혐의로 고소·고발장이 추가로 접수되었으며, 현재 서울 남대문경찰서가 해당 사건을 입건하고 조사 중이다.
 
+3.	사후 대응 방안
+SK텔레콤은 사고 직후 모든 가입자(약 2,500만 명)를 대상으로 유심 전면 교체를 추진하겠다고 밝혔다. 또한, 유심 교체가 완료되기 전까지는 ‘유심 보호 서비스’ 이용을 권장했으며, 해당 서비스를 이용했음에도 피해가 발생할 경우 SKT가 전액 책임을 지겠다고 약속했다. 아울러 BPF도어 악성코드 확산을 막기 위한 조치로 시스템 내 BPF 필터 점검 및 비정상 네트워크 및 포트 활동 모니터링, FDS 및 IDS/IPS 강화, EDR 솔루션 도입 등의 대응 방안을 제시했다. FDS란 이상 거래 탐지 시스템으로 전자금융거래 시 단말기 정보와 접속 정보, 거래 정보를 수집 및 분석하여 이상 금융 거래를 차단하는 기술이다. IDS/IPS 솔루션은 실시간으로 네트워크 패킷을 검사하고 트래픽 흐름을 분석하며 트래픽이 정상적인지 또는 악성인지 판단하는 방식으로 작동한다. 잠재적인 위협이 식별되면 IDS는 알림을 생성하고, IPS는 적극적으로 위협을 차단하거나 완화하는 방식으로 작동된다. EDR 솔루션이란 ‘Endpoint Detection and Response’의 약자로 사용자의 단말장비(Endpoint)에서 발생하는 각종 이벤트와 침투한 멀웨어를 탐지(Detection) 하고 발생하는 사고에 대응(Response) 하는 것을 목표로 하는 사이버보안 솔루션이다. 
 
-> Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque suscipit.
+4.	예상 피해 시나리오
+유심 정보가 유출될 경우 ‘심클로닝(SIM Cloning)’ 또는 ‘심스와핑(SIM Swapping)’ 공격이 발생할 수 있다. 심클로닝은 공격자가 피해자의 SIM 카드 정보를 복제하여 동일한 전화번호를 가진 복제 SIM을 만들어 사용하는 공격 방식이다. 심클로닝의 핵심 조건은 '암호 키(Ki)’ 이다. 심 카드를 완벽하게 복제하여 통신망에서 정상적으로 사용하려면 심 카드 칩 내부에 저장된 고유한 '비밀 암호 키(Ki)'를 알아내야 한다. 이 키는 통신망 인증 과정의 핵심이다. 참고한 기사에 따르면, 이번 SK텔레콤 해킹으로 유출된 것으로 의심되는 정보는 이동가입자식별번호(IMSI), 단말기 고유식별번호(IMEI), 그리고 '유심 인증키' 등이다. 여기서 IMSI는 통신망에서 가입자를 구별하는 번호이고, IMEI는 휴대폰 단말기 자체의 고유 번호이다. 가장 민감해 보이는 '유심 인증키'라는 용어가 문제입니다. 만약 이것이 심 카드 복제의 핵심인 Ki 값을 의미한다면 매우 심각한 상황이겠지만, 그럴 가능성은 지극히 낮다. Ki 값은 국제 표준에 따라 심 카드 칩 내부의 보안 영역에만 저장되며, 통신사 중앙 서버에 복제 가능한 형태로 직접 보관되지 않는 것이 일반적이기 때문이다. 따라서 서버 해킹으로 Ki 값 자체가 대량 유출되었을 가능성은 거의 없다. 기사에서 언급된 '유심 인증키'는 통신 과정에서 사용되는 다른 종류의 보조 키 값이거나, 혹은 IMSI 등 식별 정보를 포괄적으로 지칭했을 가능성이 높다. SK텔레콤 측에서도 "최악의 경우 불법 유심 제조 등에 악용될 소지가 있지만... FDS를 강화하고 있어 관련 문제가 발생할 가능성은 매우 낮다"고 밝히고 있다. 이는 대량의 심클로닝 가능성보다는, 유출된 정보를 이용한 '비정상적인 인증 시도'나 '불법적인 기기 변경(심 스와핑의 일부)' 시도를 차단하는 데 초점을 맞추고 있음을 시사한다.  
+심스와핑은 피해자의 유심 정보를 탈취해 2단계 인증을 무력화하고 이를 이용해 금융계좌, SNS 등을 해킹하는 공격을 말한다. 심스와핑 공격은 다음과 같이 진행된다. 공격자는 탈취한 유심 정보를 기반으로 불법 복제 유심을 제작한 뒤, 피해자의 통신을 끊고 복제폰을 활성화한다. 이를 통해 네이버, 카카오톡 등 주요 계정 탈취 및 가상자산 거래소 비밀번호 변경을 통해 암호화폐 등을 탈취한다. 심스와핑이 발생하면 통신사와 스마트폰은 기존 유심을 새로운 폰에 장착해 기기 변경을 했다고 판단하고, 나중에 동작한 복사된 유심을 실제 유심으로 인식하기 때문에 실제 유심과 전화기는 통신이 끊어진다. 이 때문에 심스와핑은 피해자가 통신이 끊어지는 것을 인식하지 못하도록 보통 새벽 시간대에 이뤄진다. 
+이러한 수법은 실제로 국내에서 발생한 바 있다(2021년 ~ 2022년). ‘국내 첫 심스와핑 의심 피해 발생’에서 첫 번째 피해자는 2021년 12월 23일과 24일 새벽 유심기변이 발생했고, 네이버 계정 비밀번호 변경은 물론 카카오톡이 다른 기기에서 로그인된 정황이 발견됐다. 이후 피해자는 KT 대리점에 방문해 유심을 재발급했지만, 거래하고 있던 가상자산 거래소에서 100만원 상당의 암호화폐가 이미 빼돌려진 상태였다. KT나 가상자산 거래소 입장에서는 분명 정상적인 유심 교체를 통한 ‘기기 변경’이었고, 본인확인을 통한 비밀번호 변경과 자금 이동이었기 때문에 특별한 제재 없이 모든 일이 벌어졌다. KT는 첫 번째 피해자에게 12월 23일과 24일 유심 이동 이력이 확인됐지만, 유심이 다른 단말기에 장착됐다가 다시 변경됐기 때문에 문제를 확인할 수 없다고 답변했다. 이처럼 심스와핑으로 인해 수백만원에서 수억원대의 금전적 피해가 발생할 수 있으며, 피해자는 통신 두절 및 자산 탈취를 뒤늦게 인지하는 위험이 존재한다.
 
-Tiled say decay spoil now walls meant house. My mr interest thoughts screened of outweigh removing. Evening society musical besides inhabit ye my. Lose hill well up will he over on. Increasing [link](#) sufficient everything men him admiration unpleasing .
+5.	사전 예방 방안
+향후 이러한 사고를 예방하기 위해서는 가입자 인증 서버(HSS) 등 중요 시스템에 대한 지속적 보안 점검 및 강화 및 BPF 필터 설치 여부 정기 확인이 필수적이다. 또한 비인가 포트 및 비정상 트래픽을 실시간으로 모니터링하거나, 침입 탐지 및 방지 시스템(IDS/IPS) 상시 운영하는 방법도 있다. 기업에서는 엔드포인트 탐지 및 대응(EDR) 솔루션을 도입하거나 가입자 대상으로 유심 보호 서비스를 상시 적용하고 강화해야 한다. 사용자는 유심 기기변경 시 이중 인증 절차를 필수화 하는 것이 필요하다. 또한 통신사 내부적으로도 유심 변경 및 기기변경 요청에 대한 엄격한 본인 인증 절차를 마련해야 한다.
 
-* Greatest properly off ham exercise all.
-* Unsatiable invitation its possession nor off.
-* All difficulty estimating unreserved increasing the solicitude.
+6.	참고 문헌 (요약)
+  1.	SKT 유심 정보 유출로 본 최악의 시나리오 ‘심스와핑’
+  2.	SK텔레콤에서 알려드립니다 – SK텔레콤 뉴스룸
+  3.	SKT 해킹에 쓰인 ‘BPF도어’ 악성코드는 무엇?
+  4.	SIM Cloning: 3 Signs Your Phone Number Is Compromised
+  5.	What Is EDR? Endpoint Detection and Response | Microsoft Security
 
-Unpleasant astonished an diminution up partiality. Noisy an their of meant. Death means up civil do an offer wound of.
-
-```ruby
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Ryan')
-#=> prints 'Hi, Ryan' to STDOUT.
-```

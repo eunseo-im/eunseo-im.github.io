@@ -2,10 +2,10 @@
 layout: post
 title:  "OWASP Top10 분석"
 date:   2025-05-15
-category: Design
+category: web
 image: assets/img/blog/blog6.jpg
 author: Eunseoim
-tags: Jekyll
+tags: OWASP
 ---
 
 > SQL Injection은 웹 보안 역사상 가장 오래되었지만 여전히 위협적인 취약점입니다. 이 글에서는 SQL Injection의 개념과 원리, 주요 유형, 대응 방안을 중심으로 설명합니다.
@@ -22,7 +22,7 @@ SQL Injection은 다음과 같은 공격을 가능하게 만듭니다:
 이는 단순한 버그 수준을 넘어, **전체 시스템의 신뢰성 붕괴로 이어질 수 있는 심각한 보안 사고**입니다.
 ---
 ## 3. 어떻게 발생하나?
-주로 개발자가 사용자 입력값을 SQL 쿼리에 **직접 연결(concatenation)** 하는 방식으로 처리할 때 발생합니다. 예를 들어 아래와 같은 코드가 있다면:
+주로 개발자가 사용자 입력값을 SQL 쿼리에 **직접 연결(concatenation)** 하는 방식으로 처리할 때 발생합니다. 
 ```sql
 SELECT * FROM users WHERE username = '[사용자 입력]';
 ---

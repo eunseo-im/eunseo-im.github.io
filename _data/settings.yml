@@ -10,13 +10,13 @@ settings:
 preloader:
   logo:
     image: "assets/img/logo.png"
-    alt: "Zoé Miller"
+    alt: "es"
 
 ### Header
 header:
   logo:
     image: "assets/img/logo.png"
-    alt: "Zoé Miller"
+    alt: "es"
 
 ### Social
 #social:
