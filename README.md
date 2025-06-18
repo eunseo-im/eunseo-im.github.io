@@ -1,2 +1,2 @@
-# luique
-Personal Portfolio Jekyll Theme
+# Eunseo
+Personal Portfolio
